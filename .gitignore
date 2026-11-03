@@ -1,0 +1,4 @@
+# 临时文件
+*.b64
+__pycache__/
+.DS_Store
