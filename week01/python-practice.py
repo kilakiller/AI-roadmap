@@ -6,6 +6,7 @@ Week 01 · Day 2 — Python 进阶 5 练习
 import time
 from contextlib import contextmanager
 from dataclasses import dataclass
+from pathlib import Path
 from typing import List, Optional
 
 
@@ -102,9 +103,10 @@ if __name__ == "__main__":
     print("=" * 60)
     print("练习 3：上下文管理器 — 写文件")
     print("=" * 60)
-    with write_file("D:/ai/week01/test_write.txt") as f:
+    write_path = Path(__file__).parent / "test_write.txt"
+    with write_file(str(write_path)) as f:
         f.write("Hello from context manager!\n")
-    with open("D:/ai/week01/test_write.txt", encoding='utf-8') as f:
+    with open(write_path, encoding='utf-8') as f:
         print(f"  写入内容: {f.read().strip()}\n")
 
     print("=" * 60)
